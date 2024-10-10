@@ -1,0 +1,11 @@
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import VideoViewSet
+
+# Router yaratish va VideoViewSet ni ro'yxatdan o'tkazish
+router = DefaultRouter()
+router.register(r'videos', VideoViewSet)
+
+urlpatterns = [
+    path('', include(router.urls)),  # Barcha video API yo'llarini shu yerda kiritamiz
+]
